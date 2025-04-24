@@ -1,0 +1,6 @@
+@PartneriOsiguranje_HostAddress = http://localhost:5137
+
+GET {{PartneriOsiguranje_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
