@@ -1,8 +1,9 @@
-﻿CREATE PROCEDURE [dbo].[spPartner_Get]
+﻿CREATE PROCEDURE [dbo].[spPartner_Delete]
 	@Id int
 AS
 begin 
-	select *
+	delete
 	from dbo.[Partner]
 	where Id = @Id;
 end
+

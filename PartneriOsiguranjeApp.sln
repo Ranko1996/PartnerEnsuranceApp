@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartneriOsiguranje", "Partn
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PartnerDB", "PartnerDB\PartnerDB.sqlproj", "{4710E99C-FB60-4F3F-B9E2-BB82D5F622CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAcess", "DataAcess\DataAcess.csproj", "{6515D016-9E7B-4844-BDD3-3D6B123D6801}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{4710E99C-FB60-4F3F-B9E2-BB82D5F622CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4710E99C-FB60-4F3F-B9E2-BB82D5F622CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4710E99C-FB60-4F3F-B9E2-BB82D5F622CC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6515D016-9E7B-4844-BDD3-3D6B123D6801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6515D016-9E7B-4844-BDD3-3D6B123D6801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6515D016-9E7B-4844-BDD3-3D6B123D6801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6515D016-9E7B-4844-BDD3-3D6B123D6801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
