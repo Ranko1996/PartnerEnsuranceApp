@@ -2,6 +2,7 @@
 AS
 begin
 	select
+        Id,
 		FirstName,
         LastName,
         FirstName + ' ' + LastName AS FullName,

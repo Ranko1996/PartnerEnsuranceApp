@@ -10,9 +10,9 @@
     @ExternalCode NVARCHAR(20),
     @Gender CHAR(1)
 AS
-begin
-    insert into dbo.[Partner]
-    (FirstName, LastName, Address, PartnerNumber, CroatianPIN, PartnerTypeId, CreatedByUser, IsForeign, ExternalCode, Gender)
-    values
-    (@FirstName, @LastName, @Address, @PartnerNumber, @CroatianPIN, @PartnerTypeId, @CreatedByUser, @IsForeign, @ExternalCode, @Gender);
-end
+BEGIN
+    INSERT INTO dbo.[Partner]
+    (FirstName, LastName, Address, PartnerNumber, CroatianPIN, PartnerTypeId, CreatedByUser, CreatedAtUtc, IsForeign, ExternalCode, Gender)
+    VALUES
+    (@FirstName, @LastName, @Address, @PartnerNumber, @CroatianPIN, @PartnerTypeId, @CreatedByUser, GETUTCDATE(), @IsForeign, @ExternalCode, @Gender);
+END

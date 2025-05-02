@@ -66,6 +66,7 @@
     <Build Include="dbo\StoredProcedures\spPartner_Get.sql" />
     <Build Include="dbo\StoredProcedures\spPartner_Delete.sql" />
     <Build Include="dbo\StoredProcedures\spPartner_Insert.sql" />
+    <Build Include="dbo\StoredProcedures\spPartner_Update.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="PartnerDB.refactorlog" />

@@ -26,8 +26,13 @@ public class PartnerData : IPartnerData
         return results.FirstOrDefault();
     }
 
-    public Task InsertPartner(PartnerModel partner) =>
-        _db.SaveData("dbo.spPartner_Insert", new
+    public Task InsertPartner(PartnerModel partner)
+    {
+        if (partner.CreatedAtUtc == DateTime.MinValue)
+        {
+            partner.CreatedAtUtc = DateTime.UtcNow;
+        }
+        return _db.SaveData("dbo.spPartner_Insert", new
         {
             partner.FirstName,
             partner.LastName,
@@ -35,16 +40,34 @@ public class PartnerData : IPartnerData
             partner.PartnerNumber,
             partner.CroatianPIN,
             partner.PartnerTypeId,
-            partner.CreatedAtUtc,
             partner.CreatedByUser,
             partner.IsForeign,
             partner.ExternalCode,
             partner.Gender
         });
+    }
+
+
+    //public Task UpdatePartner(PartnerModel partner) =>
+    //    _db.SaveData("dbo.spPartner_Update", partner);
 
     public Task UpdatePartner(PartnerModel partner) =>
-        _db.SaveData("dbo.spPatner_Update", partner);
+    _db.SaveData("dbo.spPartner_Update", new
+    {
+        partner.Id,
+        partner.FirstName,
+        partner.LastName,
+        partner.Address,
+        partner.PartnerNumber,
+        partner.CroatianPIN,
+        partner.PartnerTypeId,
+        partner.CreatedByUser,
+        partner.IsForeign,
+        partner.ExternalCode,
+        partner.Gender
+    });
+
 
     public Task DeletePartner(int id) =>
-        _db.SaveData("dbo.spUser_Delete", new { Id = id });
+        _db.SaveData("dbo.spPartner_Delete", new { Id = id });
 }
