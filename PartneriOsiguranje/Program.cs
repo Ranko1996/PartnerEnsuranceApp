@@ -9,6 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
 builder.Services.AddSingleton<IPartnerData, PartnerData>();
+builder.Services.AddSingleton<IInsuranceData, InsuranceData>();
 
 var app = builder.Build();
 

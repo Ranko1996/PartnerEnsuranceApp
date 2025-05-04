@@ -10,6 +10,9 @@ public static class Api
         app.MapPost("/Partner", InsertPartner);
         app.MapDelete("/Partner/{id}", DeletePartner);
         app.MapPut("/Partner", UpdatePartner);
+        app.MapGet("/Insurance/{partnerId}", GetInsurance); 
+        app.MapPost("/Insurance", InsertInsurance);         
+
     }
 
     private static async Task<IResult> GetPartners(IPartnerData data)
@@ -76,4 +79,31 @@ public static class Api
             return Results.Problem(ex.Message);
         }
     }
+
+    private static async Task<IResult> GetInsurance(int partnerId, IInsuranceData data)
+    {
+        try
+        {
+            var result = await data.GetInsurancesForPartner(partnerId);
+            return Results.Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+
+    private static async Task<IResult> InsertInsurance(InsuranceModel insurance, IInsuranceData data)
+    {
+        try
+        {
+            await data.InsertInsurance(insurance);
+            return Results.Ok();
+        }
+        catch (Exception ex)
+        {
+            return Results.Problem(ex.Message);
+        }
+    }
+
 }

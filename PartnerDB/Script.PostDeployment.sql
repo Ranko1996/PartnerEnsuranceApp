@@ -20,3 +20,18 @@ begin
     ('Ana', 'Marić', 'Petrova 3', '55556666777788889999', NULL, 2, GETUTCDATE(), 'ana.maric@example.com', 1, 'EXTERNAL0013', 'F'),
     ('Petra', 'Jurić', 'Ilica 100', '22223333444455556666', '12312312312', 1, GETUTCDATE(), 'petra.juric@example.com', 0, 'EXTERNAL0014', 'N');
 end
+
+if not exists (select 1 from dbo.[Insurance])
+begin
+    insert into dbo.[Insurance] (
+        PartnerId,
+        PolicyNumber,
+        Amount
+    )
+    values
+    (2, 'POLICY00001', 1000.00),
+    (2, 'POLICY00002', 1500.50),
+    (3, 'POLICY00003', 850.75),
+    (4, 'POLICY00004', 920.00),
+    (5, 'POLICY00005', 1100.25);
+end
